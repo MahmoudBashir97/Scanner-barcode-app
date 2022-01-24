@@ -1,0 +1,21 @@
+<resources>
+    <array name="item_types">
+        <item>choose item</item>
+        <item>Food</item>
+        <item>Drink</item>
+        <item>Chipse</item>
+        <item>Electronic</item>
+    </array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <array name="extension_expiry_date">
+        <item>choose item</item>
+        <item>6 hours</item>
+        <item>12 hours</item>
+        <item>18 hours</item>
+        <item>24 hours</item>
+    </array>
+    <string name="app_name">ThirdwayvTaskChallange</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_items_added">No Items Added</string>
+</resources>
