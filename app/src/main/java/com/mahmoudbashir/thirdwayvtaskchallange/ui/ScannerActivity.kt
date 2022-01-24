@@ -109,7 +109,8 @@ class ScannerActivity : AppCompatActivity() {
                 val cTime = formatter.format(Date())
                 val ft = formatter.parse(cTime) as Date
 
-                val itemExDate = formatter.parse(selectedDateTime) as Date
+                var itemExDate = formatter.parse(selectedDateTime) as Date
+
 
                 scannerActBinding.txtExpireDate.text =  selectedDateTime.split(" ")[0]
 
@@ -122,6 +123,7 @@ class ScannerActivity : AppCompatActivity() {
                 spinnerListenerExtensionDate(selectedDateTime)
 
             }, year, month, day)
+            dpd.datePicker.minDate = System.currentTimeMillis() - 1000
             dpd.show()
         }
     }
@@ -187,7 +189,7 @@ class ScannerActivity : AppCompatActivity() {
         dTime.time = dTime.time + hours
         val calculated = dTime.time + hours
 
-       itemExpireDateTime = "$calculated"
+       itemExpireDateTime = "$dTime"
        itemExpiredTimeStamp = calculated
 
     }
@@ -303,8 +305,7 @@ class ScannerActivity : AppCompatActivity() {
                 scannerActBinding.txtExpireDate.text.toString().isNotEmpty()
                 && selectedType!!.isNotEmpty()
                 ||
-            (scannerActBinding.isExtensionDate && itemExpireDateTime.toString().isNotEmpty())
-                )
+                (scannerActBinding.isExtensionDate && itemExpireDateTime.toString().isNotEmpty()))
     }
 
 
